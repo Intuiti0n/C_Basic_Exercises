@@ -5,12 +5,12 @@
 
 //chapter 5 end exercises
 
-float CentigradeToFahrenheit(float C){
-    return (9/(float)5)*C + 32;
+double CentigradeToFahrenheit(double C){
+    return (9/(double)5)*C + 32;
 }
 
 float SphereVolume(float r){
-    return 4/(float)3*3.1415*r*r*r;
+    return 4/(float)3*(float)3.1415*r*r*r;
 }
 
 float rectanglePerimeter(float height, float width){
@@ -22,8 +22,8 @@ double kmhTomph(double km){
 }
 
 int hoursTomin(double time){
-    int time2= time*10;
-    return time2/10*60+(time2%10/(float)10)*60;
+    int time2=(int) time*10;
+    return time2/10*60+(int)(time2%10/(float)10)*60;
 }
 
 double minToHours(int min){
@@ -73,17 +73,23 @@ void printGrade2ndLetter(int percentage){
 //6-4 calcular centimos para entregar num valor menor que 1€
 void printTrocos(float value){
     unsigned short int m50,m20,m10,m5,m2,m1,total;
-        total=value*100;
-        m50=0;
-        m20=0;
-        m10=0;
-        m5=0;
-        m2=0;
-        m1=0;
+        if(value >1||value < 0)
+                return;
+        else {
+            total=(unsigned short int)value*100;
+            m50=0;
+            m20=0;
+            m10=0;
+            m5=0;
+            m2=0;
+            m1=0;
 
-        m50=total/50;
-        total-=m50;
-        m20=
+            m50=total/50;
+            total-=m50;
+
+        }
+
+
 
 
 }
@@ -93,9 +99,9 @@ int main()
 {
     printf("Hello World!\n");
 
-    int test = (int) CentigradeToFahrenheit(50);
+    double test = CentigradeToFahrenheit(50);
 
-    printf("%d\n",test);
+    printf("%lf\n",test);
 
 
     printf("Time %.2lf %d\n",1.5,hoursTomin(1.5));

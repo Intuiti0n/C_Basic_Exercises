@@ -61,11 +61,18 @@ void desenha_quad_vazio(int N, char simb){
 com dimensão N utilizando um dado símbolo. Quer o tronco quer a copa têm altura N.*/
 void desenha_arvore(int N, char simb){
     int i,j;
-    for (i=0;i<N;i++) {
-        for (j=0;j<N;j++) {
 
+    if(N==1)
+        printf("%c\n%c\n",simb,simb);
+    else{
+        for (i=0;i<N;i++) {
+            for (j=0;j<N;j++) {
+                if(j==N-1)
+                    printf()
+            }
         }
     }
+
 
 }
 /*Escreva uma função void desenha_cobra(int N, char simb) que desenha uma cobra com dimensão
