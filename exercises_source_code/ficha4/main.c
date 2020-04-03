@@ -24,6 +24,13 @@ void mostra_vetor(int v[], int n){
     }
 }
 
+void print_vector(int v[], int n){
+    int i=0;
+    for(i=0;i<n;i++){
+        printf("%d ",v[i]);
+    }
+    printf("\n");
+}
 /*
 4.3) Construa o programa principal que lhe permita testar as duas funções anteriores (criando um vetor com 20
 elementos e mostrando o seu conteúdo no écran). Vá actualizando o programa principal com testes adequados às
@@ -71,19 +78,22 @@ int pesquisa(int v[], int n, int elem){
 4.7) Escreva uma função que permita ordenar um vetor com n números inteiros void ordena(int v[], int n)
 */
 //Selection Sort
-void ordena(int v[], int n){
-    int i=0,j=0,min=100,swapIndex=0,aux=0;
+void ordena_SelectionSort(int v[], int n){
+    int i=0,j=0;
 
-    for(j=0;j<n;j++){
-        for(i=j;i<n;i++){
-            if(v[i]<min){
-                min=v[i];
-                swapIndex=i;
+    for(j=0;j<n-1;j++){
+        int iMin=j;
+        for(i=j+1;i<n;i++){
+            if(v[i]<v[iMin])
+                iMin=i;
+            if(iMin!=j){
+                //swap using xor
+                v[j]^=v[iMin];
+                v[iMin]^=v[j];
+                v[j]^=v[iMin];
             }
         }
-        aux=v[j];
-        v[j]=min;
-        v[swapIndex]=aux;
+        print_vector(v,n);
     }
 }
 
@@ -143,9 +153,10 @@ int main()
     srand(time(NULL));
     printf("Hello World!\n");
 
-    unsigned int vec[10];
+    int vec[10]={2,8,5,3,9,4,1,0,10,23};
 
-    preenche_aleatorio(vec,10);
+    //preenche_aleatorio(vec,10);
 
+    ordena_SelectionSort(vec,10);
     return 0;
 }
