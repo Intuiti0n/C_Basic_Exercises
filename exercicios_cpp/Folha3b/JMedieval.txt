@@ -1,0 +1,14 @@
+player 100 99 1 0
+player 100 80 0.5 0.8
+player 100 77 0.8 0.1
+player 100 72 0.1 0.5
+player 100 80 0.6 0.4
+player 100 66 0.3 0.1
+player 100 66 1 0.8
+player 100 53 0.9 0.9
+player 100 41 0.3 0.7
+player 100 83 0.9 0.8
+monster 98 15 0.8 0.7
+monster 83 73 0.6 0
+monster 45 96 0.4 0.6
+monster 77 78 0.5 0.7

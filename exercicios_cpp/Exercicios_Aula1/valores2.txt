@@ -1,0 +1,9 @@
+22 nao e' primo
+80 nao e' primo
+987 nao e' primo
+-1351 não e' um inteiro positivo
+5 e' primo
+667 nao e' primo
+-11 não e' um inteiro positivo
+29 e' primo
+387 nao e' primo

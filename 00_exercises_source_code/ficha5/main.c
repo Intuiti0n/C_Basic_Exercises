@@ -161,11 +161,28 @@ void transposta_matriz(int x[LIN][COL], int x2[COL][LIN], int nl, int nc){
 5.12) Escreva uma função semelhante à do exercício anterior mas que calcule a transposta de uma matriz quadrada nxn
 na própria matriz: void transposta_matriz_quad(int x[LIN][COL], int n)
 */
-
+void transposta_matriz_quad(int x[][COL], int n)
+{
+	for(int i=0; i<n-1; i++) 
+		for(int j=i+1; j<n; j++){
+			int aux=x[i][j]; x[i][j]=x[j][i]; x[j][i]=aux;
+		}
+}
 /*
 5.13) Escreva uma função que calcule a multiplicação de duas matrizes: void multiplica_matriz(int x[LIN][COL], int
 x2[COL][LIN], x3[LIN][LIN], int nl, int nc)
 */
+void multiplica_matriz(int x[LIN][COL], int x2[COL][LIN], x3[LIN][LIN], int nl, int nc){
+	for(i=0;i<r;i++){    
+		for(j=0;j<c;j++){    
+			x3[i][j]=0;   
+			 
+	for(k=0;k<c;k++){    
+		x3[i][j]+=x[i][k]*x2[k][j];    
+			}    
+		}	    
+	}    
+}
 
 int main()
 {

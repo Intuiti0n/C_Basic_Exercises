@@ -3,9 +3,9 @@
     {
       "name": "windows-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/**",
+        "C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\include"
       ],
-      "defines": [],
       "compilerPath": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\gcc.exe",
       "cStandard": "${default}",
       "cppStandard": "${default}",
