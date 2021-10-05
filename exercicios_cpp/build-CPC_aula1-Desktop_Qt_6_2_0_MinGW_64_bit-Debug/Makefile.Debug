@@ -53,7 +53,7 @@ OBJECTS_DIR   = debug
 SOURCES       = ..\CPC_aula1\main.cpp 
 OBJECTS       = debug/main.o
 
-DIST          =   ..\CPC_aula1\main.cpp
+DIST          = test.txt  ..\CPC_aula1\main.cpp
 QMAKE_TARGET  = CPC_aula1
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = CPC_aula1.exe

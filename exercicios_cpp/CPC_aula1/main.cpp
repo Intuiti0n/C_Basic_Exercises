@@ -84,7 +84,7 @@ double frequenciasPal(string nome){
 
     cout << "Media: "<< (float) soma / n<<endl;
 
-
+    return (double) soma / n;
 }
 
 struct tempo { short int hora, minu, segu; };
@@ -97,12 +97,12 @@ incr100(t) resulta em t={11, 00, 52} e imprime no écran “11 horas, 00 minutos
 void incr100(tempo &t){
     t.segu +=100;
     if(t.segu > 59){
+        t.minu++;
+        t.segu -=60;
+        if(t.segu > 59){
             t.minu++;
             t.segu -=60;
-            if(t.segu > 59){
-                t.minu++;
-                t.segu -=60;
-            }
+        }
     }
     if(t.minu > 59){
         t.hora++;
@@ -170,28 +170,115 @@ void hipotenusa_ask(void){
     cout << "hipotenusa: "<< hip <<endl;
 
 }
+
+/*
+b) Continuamente, obtenha da consola as dimensões dos catetos (sempre positivos) e produza o valor
+da hipotenusa até que o utilizador escreva um valor negativo.
+*/
+void hipotenusa_ask2(void){
+    float c1=0,c2=0,hip=0;
+    while(c1 >=0 || c2 >=0){
+        cout << "cat1"<<endl;
+        cin >> c1;
+        cout << "cat2"<<endl;
+        cin >> c2;
+
+        hip = (float)sqrt((double)c1*c1+c2*c2);
+
+        cout << "hipotenusa: "<< hip <<endl;
+    }
+}
+
+/*
+Relativamente a números primos:
+a) Escreva uma função que identifique números primos (e insira-a num programa de teste em C). O
+protótipo da função é: int primo(int n); e retorna 1 se n é primo e 0 no caso contrário. (Sugestão: para
+verificar se n é primo, basta dividir n pelos números de 2 a sqrt(n).)
+*/
+int primo(int n){
+    int test = 0;
+    int cmp = (int)sqrt(n)+1;
+    for(int i=1;i<=cmp;i++){
+        if(test > 1)
+            return 0;
+        if(n%i==0)
+            test++;
+    }
+    return 1;
+}
+
+/*
+b) Recorrendo à função anterior, escreva um programa que imprima os números primos
+compreendidos entre 1 e N, em que N é um valor indicado pelo utilizador na linha de comando.
+*/
+void primosToN(int n){
+    for(int i=1;i<=n;i++)
+        if(primo(i))
+            cout << i << endl;
+}
+
+/*
+c) Escreva um programa em que na linha de comando é especificado como argumento o nome de um
+ficheiro onde se encontram os números que se quer determinar se são primos ou não. O programa
+deve imprimir na consola para cada número lido uma linha com (o parenteses reto denota a
+alternativa): <número>: primo [ou: não primo]
+*/
+
+
+/*
+ * a) Escreva um programa que solicite ao utilizador um número e que depois imprima todos os números
+desde 1 até esse numero, excluindo todos os números múltiplos de 2 e 3.
+ */
+void printMultiples(int n){
+    for(int i=1;i<=n;i++){
+        if(!(i%2==0 || i % 3==0))
+            cout << i << " ";
+
+    }
+    cout <<endl;
+}
+
+/*
+ * b) Pirâmide de Números (ciclos). Escreva um programa que dado um valor N introduzido pelo
+utilizador coloque os seguintes números no ecrã. Exemplo de execução:
+ */
+void numberPiramid(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=i;j>=1;j--){
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     //exercicio 1
     /*
 a) Escreva o programa base "Hello World!"
 */
-    cout << "Hello World!" << endl;
+    //cout << "Hello World!" << endl;
 
-//    troco(38,15);
-//    troco(50,25);
-//    troco(50,20);
-//    troco(20,4);
-//    troco(5,1);
+    //    troco(38,15);
+    //    troco(50,25);
+    //    troco(50,20);
+    //    troco(20,4);
+    //    troco(5,1);
 
     //num7(5);
 
-    frequenciasPal("ola amigo hello ma friend");
+    //    frequenciasPal("ola amigo hello ma friend");
 
-    tempo test;
-    test.hora = 10;
-    test.minu = 59;
-    test.segu = 12;
-    incr100(test);
+    //    tempo test;
+    //    test.hora = 10;
+    //    test.minu = 59;
+    //    test.segu = 12;
+    //    incr100(test);
+
+    //cout << primo(7919)<<endl;
+    //primosToN(10);
+
+    //printMultiples(11);
+    numberPiramid(6);
     return 0;
 }
