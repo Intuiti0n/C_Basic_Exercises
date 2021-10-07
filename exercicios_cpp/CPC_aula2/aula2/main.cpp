@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
+
+#include "calunoprog.h"
+
 using namespace std;
+
 
 int main()
 {

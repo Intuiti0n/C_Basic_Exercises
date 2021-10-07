@@ -4,8 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        calunoprog.cpp \
+        cdate.cpp \
         main.cpp
 
 HEADERS += \
-    calunoprog.h
+    cdate.h
