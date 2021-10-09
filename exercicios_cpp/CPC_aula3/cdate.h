@@ -18,7 +18,7 @@ public:
     bool operator== (const CDate& rhs);
     friend ostream& operator<< (ostream& os, CDate &d);
     CDate& operator++();
-
+    CDate& operator++(int);
 private:
     int month; // 1-12
     int day; // 1-31 based on month

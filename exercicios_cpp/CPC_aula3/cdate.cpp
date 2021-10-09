@@ -91,6 +91,25 @@ ostream& operator<< (ostream& os, CDate &d){
 
 CDate& CDate::operator++(){
     day++;
-    if(checkDay()==0)
+    if(checkDay()==0){
+        day = 1;
+        month++;
+    }
+    if(checkDay()==0){
+        year++;
+        month=1;
+    }
     return *this;
+}
+
+CDate& CDate::operator++(int){
+    CDate temp = *this;
+    ++*this;
+    return temp;
+}
+
+int difDate(CDate d2){
+    //calcular valor do dia desde que se passaram 1900
+    //fazer diferença em dias
+
 }
