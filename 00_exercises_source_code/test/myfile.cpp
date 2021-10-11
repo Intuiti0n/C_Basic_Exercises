@@ -1,6 +1,22 @@
 #include <iostream>
 using namespace std;
 
+class test
+{
+private:
+    /* data */
+public:
+    test(/* args */);
+    ~test();
+};
+
+test::test(/* args */)
+{
+}
+
+test::~test()
+{
+}
 
 int solve(int n, int e, int o, int t) {
     unsigned int result = 0;
@@ -30,6 +46,8 @@ int solve(int n, int e, int o, int t) {
 int main(){
 
     cout << solve(57,6,10,30390291)<<endl;
+    class test v;
+    v.
     
     return 0;
 }
